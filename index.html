@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Alyra Consultoria: diagnóstico e auditoria de cronogramas industriais, planejamento e análise de prazos." name="description"/>
+  <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+  <title>
+   Alyra Consultoria | Diagnóstico de Cronogramas Industriais
+  </title>
+  <style>
+   :root {
+  --ink:#132c3a;
+  --navy:#0d2838;
+  --teal:#167e83;
+  --muted:#5b6b73;
+  --paper:#f6f8f7;
+  --line:#dce6e5;
+  --white:#fff
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth
+}
+body {
+  margin:0;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  line-height:1.65;
+  background:#fff
+}
+a {
+  color:inherit;
+  text-decoration:none
+}
+button,input,select,textarea {
+  font:inherit
+}
+button {
+  cursor:pointer
+}
+.wrap {
+  width:min(1120px,calc(100% - 40px));
+  margin:auto
+}
+.nav {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#ffffffed;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)
+}
+.navinner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  min-height:78px
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:23px;
+  letter-spacing:.14em;
+  font-weight:750
+}
+.brandmark {
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  background:var(--navy);
+  color:#fff;
+  border-radius:9px;
+  font-size:22px
+}
+.links {
+  display:flex;
+  align-items:center;
+  gap:23px;
+  font-size:13px;
+  font-weight:650
+}
+.links a:hover {
+  color:var(--teal)
+}
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:5px;
+  padding:13px 21px;
+  font-weight:700;
+  font-size:13px;
+  border:1px solid var(--teal);
+  background:var(--teal);
+  color:white;
+  transition:.2s
+}
+.btn:hover {
+  transform:translateY(-2px);
+  filter:brightness(.93)
+}
+.btn.outline {
+  background:transparent;
+  color:var(--ink);
+  border-color:#9fb9bc
+}
+.btn.light {
+  background:#fff;
+  color:var(--navy);
+  border-color:#fff
+}
+.menu {
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:25px
+}
+.hero {
+  background:linear-gradient(125deg,#0c2737 0%,#123c49 65%,#185b60 100%);
+  color:white;
+  padding:110px 0 80px;
+  overflow:hidden
+}
+.hero .wrap {
+  position:relative
+}
+.hero .wrap:after {
+  content:"";
+  position:absolute;
+  width:390px;
+  height:390px;
+  border:1px solid #ffffff19;
+  border-radius:50%;
+  right:-140px;
+  top:-75px;
+  box-shadow:0 0 0 65px #ffffff08,0 0 0 130px #ffffff05;
+  pointer-events:none
+}
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:.17em;
+  font-size:11px;
+  font-weight:800;
+  color:var(--teal)
+}
+.hero .eyebrow {
+  color:#a2d4d1
+}
+.hero h1 {
+  font-size:clamp(34px,5vw,62px);
+  line-height:1.13;
+  letter-spacing:-.045em;
+  max-width:900px;
+  margin:19px 0 25px
+}
+.hero h1 span {
+  color:#9ed7d2
+}
+.hero p {
+  font-size:17px;
+  max-width:690px;
+  color:#d4e1e4
+}
+.actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:32px
+}
+.pillars {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:#31545e;
+  margin-top:85px;
+  border:1px solid #31545e
+}
+.pillar {
+  background:#143b49;
+  padding:25px
+}
+.pillar b {
+  display:block;
+  color:white;
+  margin-bottom:5px
+}
+.pillar small {
+  color:#c5d8dc;
+  font-size:13px
+}
+.section {
+  padding:94px 0
+}
+.section.alt {
+  background:var(--paper)
+}
+.heading {
+  max-width:750px;
+  margin-bottom:40px
+}
+.heading h2 {
+  font-size:clamp(29px,3.6vw,43px);
+  letter-spacing:-.035em;
+  line-height:1.2;
+  margin:12px 0 15px
+}
+.heading p {
+  color:var(--muted);
+  margin:0
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px
+}
+.card {
+  background:white;
+  border:1px solid var(--line);
+  padding:30px;
+  border-radius:8px
+}
+.card .num {
+  color:var(--teal);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em
+}
+.card h3 {
+  font-size:20px;
+  margin:13px 0 10px;
+  line-height:1.35
+}
+.card p {
+  color:var(--muted);
+  font-size:14px;
+  margin:0
+}
+.notice {
+  border-left:3px solid var(--teal);
+  padding:16px 22px;
+  background:#e9f1ef;
+  color:#35525b;
+  margin-top:26px
+}
+.feature {
+  background:var(--navy);
+  color:#fff;
+  padding:38px;
+  border-radius:8px;
+  margin-bottom:22px
+}
+.feature h3 {
+  font-size:29px;
+  margin:9px 0
+}
+.feature p {
+  color:#d1dee0;
+  max-width:800px
+}
+.chips {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:20px 0
+}
+.chip {
+  font-size:12px;
+  border:1px solid #ffffff4a;
+  padding:7px 12px;
+  border-radius:4px
+}
+.services {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px
+}
+.service {
+  border:1px solid var(--line);
+  padding:28px;
+  border-radius:7px;
+  background:white
+}
+.service h3 {
+  margin:0 0 12px;
+  font-size:19px
+}
+.service p {
+  font-size:14px;
+  color:var(--muted);
+  margin:0
+}
+.steps {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px
+}
+.steps .card {
+  padding:24px
+}
+.steps h3 {
+  font-size:17px
+}
+.about {
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:55px;
+  align-items:center
+}
+.stats {
+  background:var(--navy);
+  color:white;
+  padding:42px;
+  border-radius:8px
+}
+.stats strong {
+  font-size:33px;
+  display:block
+}
+.stats span {
+  font-size:13px;
+  color:#c4d9de
+}
+.stats div+div {
+  border-top:1px solid #ffffff26;
+  margin-top:24px;
+  padding-top:24px
+}
+.cta {
+  background:linear-gradient(120deg,#0e303f,#17686c);
+  color:white;
+  text-align:center;
+  padding:75px 20px
+}
+.cta h2 {
+  font-size:clamp(27px,4vw,42px);
+  line-height:1.25;
+  max-width:750px;
+  margin:0 auto 20px
+}
+.cta p {
+  max-width:700px;
+  margin:auto;
+  color:#d8e8e8
+}
+.cta .actions {
+  justify-content:center
+}
+.contact {
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:55px
+}
+.form {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px
+}
+.form label {
+  display:block;
+  font-size:12px;
+  font-weight:750;
+  margin-bottom:5px
+}
+.form input,.form select,.form textarea {
+  width:100%;
+  border:1px solid #cfdad9;
+  border-radius:5px;
+  padding:12px;
+  background:white;
+  color:var(--ink)
+}
+.full {
+  grid-column:1/-1
+}
+.contactinfo a {
+  color:var(--teal);
+  overflow-wrap:anywhere
+}
+.contactinfo p {
+  margin:7px 0 24px
+}
+footer {
+  background:#092431;
+  color:#cbdadd;
+  padding:28px 0;
+  font-size:13px
+}
+footer .wrap {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap
+}
+.tag {
+  font-size:12px;
+  color:#a8d6d3
+}
+.mini {
+  font-size:13px;
+  color:var(--muted)
+}
+@media(max-width:800px) {
+  .menu {
+    display:block
+  }
+  .links {
+    display:none;
+    position:absolute;
+    top:77px;
+    left:0;
+    right:0;
+    background:white;
+    padding:24px;
+    flex-direction:column;
+    align-items:stretch;
+    box-shadow:0 12px 20px #0002
+  }
+  .links.open {
+    display:flex
+  }
+  .navinner>.btn {
+    display:none
+  }
+  .pillars,.steps {
+    grid-template-columns:1fr
+  }
+  .grid,.services,.about,.contact {
+    grid-template-columns:1fr
+  }
+  .hero {
+    padding:75px 0 40px
+  }
+  .pillars {
+    margin-top:50px
+  }
+  .section {
+    padding:65px 0
+  }
+}
+@media(max-width:480px) {
+  .form {
+    grid-template-columns:1fr
+  }
+  .hero h1 {
+    font-size:35px
+  }
+  .brand {
+    font-size:19px
+  }
+  .card,.service {
+    padding:22px
+  }
+}
+/* Alyra · identidade visual unificada */
+
+:root {
+  --ink:#23374a;
+  --navy:#1F4E78;
+  --teal:#1F4E78;
+  --gold:#C9A961;
+  --muted:#627183;
+  --paper:#F5F5F5;
+  --line:#e3e7eb;
+  --white:#FFFFFF
+}
+body {
+  background:#FFFFFF
+}
+.nav {
+  background:#fffffff5;
+  border-bottom:1px solid #e9edf1
+}
+.navinner {
+  min-height:72px
+}
+.brand {
+  letter-spacing:.11em
+}
+.brandmark {
+  background:var(--navy);
+  border-radius:7px
+}
+.links a:hover,.contactinfo a {
+  color:var(--navy)
+}
+.btn {
+  background:var(--navy);
+  border-color:var(--navy);
+  border-radius:7px;
+  box-shadow:none;
+  transition:background .2s,border-color .2s
+}
+.btn:hover {
+  transform:none;
+  filter:none;
+  background:#173c5d;
+  border-color:#173c5d
+}
+.btn.outline {
+  border-color:#c6d2dd
+}
+.btn.light {
+  color:var(--navy);
+  background:#fff;
+  border-color:#fff
+}
+.btn.light:hover {
+  background:#f5f5f5;
+  border-color:#f5f5f5
+}
+.hero {
+  background:linear-gradient(120deg,#1F4E78 0%,#264e73 100%);
+  padding:92px 0 72px
+}
+.hero .wrap:after {
+  display:none
+}
+.hero .eyebrow {
+  color:#e2cb95
+}
+.hero h1 {
+  letter-spacing:-.035em
+}
+.hero h1 span {
+  color:#e5cb90
+}
+.hero p {
+  color:#e8edf3
+}
+.pillars {
+  gap:12px;
+  background:transparent;
+  border:0;
+  margin-top:60px
+}
+.pillar {
+  background:#ffffff12;
+  border:1px solid #ffffff29;
+  border-radius:8px;
+  padding:23px
+}
+.pillar small {
+  color:#e3eaf2
+}
+.section {
+  padding:82px 0
+}
+.section.alt {
+  background:#F5F5F5
+}
+.eyebrow,.card .num,.tag {
+  color:#a48747
+}
+.card,.service {
+  border-color:#e5e8ec;
+  border-radius:10px;
+  padding:28px;
+  box-shadow:none
+}
+.card h3,.service h3 {
+  color:#253d53
+}
+.notice {
+  border-left-color:var(--gold);
+  background:#f9f7f0;
+  color:#485567;
+  border-radius:0 7px 7px 0
+}
+.feature,.stats {
+  background:#1F4E78;
+  border-radius:10px
+}
+.feature p,.stats span {
+  color:#e5edf5
+}
+.chip {
+  border-color:#ffffff57;
+  border-radius:6px
+}
+.cta {
+  background:#1F4E78;
+  padding:70px 20px
+}
+.cta p {
+  color:#e7eef5
+}
+.form input,.form select,.form textarea {
+  border-color:#d9dfe5;
+  border-radius:7px
+}
+.form input:focus,.form select:focus,.form textarea:focus {
+  outline:2px solid #C9A961;
+  outline-offset:1px
+}
+footer {
+  background:#183c5c;
+  color:#e1e8ef
+}
+@media(max-width:800px) {
+  .hero {
+    padding:65px 0 45px
+  }
+  .section {
+    padding:60px 0
+  }
+  .pillars {
+    margin-top:38px
+  }
+}
+/* Refinamento visual: superfícies fluidas e interações discretas */
+
+body {
+  background:#fff;
+  color:#273b4d
+}
+.hero {
+  background:linear-gradient(138deg,#f7f9fb 0%,#edf3f8 52%,#e5eef6 100%);
+  color:#213f5a;
+  padding:100px 0 78px
+}
+.hero .eyebrow {
+  color:#9b7b3e
+}
+.hero h1 {
+  color:#1F4E78
+}
+.hero h1 span {
+  color:#567996
+}
+.hero p {
+  color:#536779
+}
+.hero .btn.light {
+  background:#1F4E78;
+  color:white;
+  border-color:#1F4E78
+}
+.hero .btn.light:hover {
+  background:#173d5e;
+  border-color:#173d5e
+}
+.hero .btn.outline {
+  color:#1F4E78!important;
+  border-color:#b4c6d6!important
+}
+.hero .btn.outline:hover {
+  background:#e7eff6
+}
+.pillars {
+  background:transparent;
+  gap:14px;
+  margin-top:64px
+}
+.pillar {
+  background:#ffffffa8;
+  border:1px solid #dbe5ee;
+  border-radius:12px;
+  box-shadow:0 8px 26px #1f4e7809
+}
+.pillar b {
+  color:#244a69
+}
+.pillar small {
+  color:#607487
+}
+.section {
+  background:#fff
+}
+.section.alt {
+  background:linear-gradient(180deg,#fff 0%,#f6f8fa 15%,#f6f8fa 85%,#fff 100%)
+}
+.card,.service {
+  border:1px solid #e5eaf0;
+  border-radius:12px;
+  background:#fff;
+  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease
+}
+.card:hover,.service:hover {
+  border-color:#cbd9e5;
+  box-shadow:0 12px 32px #1f4e780b;
+  transform:translateY(-2px)
+}
+.feature {
+  background:linear-gradient(130deg,#244d72,#416c8e);
+  border-radius:14px
+}
+.stats {
+  background:linear-gradient(150deg,#edf3f8,#f9fafb);
+  color:#264a68;
+  border:1px solid #e2eaf1
+}
+.stats span {
+  color:#64798c
+}
+.stats div+div {
+  border-top-color:#dce5ed
+}
+.cta {
+  background:linear-gradient(135deg,#eaf1f7 0%,#f8fafb 55%,#f0f3f6 100%);
+  color:#234b6b
+}
+.cta p {
+  color:#5b7082
+}
+.cta .btn {
+  background:#1F4E78;
+  color:#fff;
+  border-color:#1F4E78
+}
+.cta .btn:hover {
+  background:#173c5d;
+  border-color:#173c5d
+}
+.btn {
+  transition:background .22s ease,border-color .22s ease,color .22s ease,box-shadow .22s ease
+}
+.nav {
+  transition:background .25s ease,box-shadow .25s ease
+}
+.form input,.form select,.form textarea {
+  transition:border-color .2s ease,box-shadow .2s ease
+}
+.form input:focus,.form select:focus,.form textarea:focus {
+  box-shadow:0 0 0 3px #c9a96124
+}
+@media(max-width:800px) {
+  .hero {
+    padding:66px 0 52px
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .card,.service,.btn,.nav,.form input,.form select,.form textarea {
+    transition:none!important
+  }
+  .card:hover,.service:hover {
+    transform:none
+  }
+}
+/* Transição contínua: hero navy até superfícies claras */
+
+.hero {
+  background:linear-gradient(180deg,#1F4E78 0%,#285982 42%,#517b9d 74%,#e5edf4 100%);
+  color:#fff;
+  padding-bottom:100px
+}
+.hero .eyebrow {
+  color:#ead19c
+}
+.hero h1 {
+  color:#fff
+}
+.hero h1 span {
+  color:#e5c888
+}
+.hero p {
+  color:#e8eff5
+}
+.hero .btn.light {
+  background:#fff;
+  color:#1F4E78;
+  border-color:#fff
+}
+.hero .btn.light:hover {
+  background:#f2f5f8;
+  border-color:#f2f5f8
+}
+.hero .btn.outline {
+  color:#fff!important;
+  border-color:#d4e0e9!important
+}
+.hero .btn.outline:hover {
+  background:#ffffff18
+}
+.pillars {
+  margin-top:70px
+}
+.pillar {
+  background:#ffffff25;
+  border-color:#ffffff57;
+  backdrop-filter:blur(3px)
+}
+.pillar b {
+  color:#fff
+}
+.pillar small {
+  color:#f3f6f9
+}
+.hero+.section,.hero+section {
+  background:linear-gradient(180deg,#e5edf4 0%,#fff 230px)
+}
+.section.alt {
+  background:linear-gradient(180deg,#fff 0%,#f5f7f9 20%,#f5f7f9 80%,#fff 100%)
+}
+/* Correção da emenda: hero e primeira seção compartilham a mesma transição */
+
+.hero {
+  background:linear-gradient(180deg,#1F4E78 0%,#285982 45%,#6f94b2 78%,#e5edf4 100%);
+  padding-bottom:0
+}
+.hero .wrap {
+  padding-bottom:95px
+}
+.hero .pillars {
+  margin-bottom:0
+}
+.hero+section,.hero+.section {
+  background:linear-gradient(180deg,#e5edf4 0%,#f3f6f9 140px,#fff 360px)!important
+}
+@media(max-width:800px) {
+  .hero .wrap {
+    padding-bottom:60px
+  }
+}
+/* Revisão de identidade e serviços conforme orientações da Alyra */
+
+:root {
+  --ink:#14263D;
+  --navy:#14263D;
+  --teal:#14263D;
+  --gold:#B79A60;
+  --muted:#66717D;
+  --paper:#F7F8FA;
+  --line:#e2e6eb
+}
+body {
+  color:#14263D;
+  background:#F7F8FA
+}
+.nav {
+  background:#fff;
+  border-bottom-color:#e2e6eb
+}
+.brandmark {
+  background:#14263D
+}
+.hero {
+  background:linear-gradient(180deg,#14263D 0%,#1b3551 55%,#46607a 82%,#F7F8FA 100%);
+  color:#fff
+}
+.hero h1 {
+  color:#fff
+}
+.hero h1 span {
+  color:#e3c78e
+}
+.hero .eyebrow {
+  color:#e3c78e
+}
+.hero p {
+  color:#f0f3f7
+}
+.hero .btn.light {
+  background:#fff;
+  color:#14263D;
+  border-color:#fff
+}
+.hero .btn.outline {
+  color:#fff!important;
+  border-color:#cdd8e3!important
+}
+.hero .pillar {
+  background:#14263dba;
+  border-color:#a7b8c999;
+  box-shadow:none
+}
+.hero .pillar b {
+  color:#fff
+}
+.hero .pillar small {
+  color:#f0f3f7
+}
+.hero .tag {
+  color:#f0d9a9
+}
+.hero+section,.hero+.section {
+  background:linear-gradient(180deg,#F7F8FA 0%,#fff 280px)!important
+}
+.section.alt {
+  background:linear-gradient(180deg,#fff,#F7F8FA 20%,#F7F8FA 80%,#fff)
+}
+.eyebrow,.card .num,.tag {
+  color:#9c7d47
+}
+.btn,.cta .btn {
+  background:#14263D;
+  border-color:#14263D
+}
+.btn:hover,.cta .btn:hover {
+  background:#263e58;
+  border-color:#263e58
+}
+.feature {
+  background:linear-gradient(135deg,#14263D,#29425d)
+}
+.feature .tag {
+  color:#e3c78e
+}
+.feature p {
+  color:#f0f3f7
+}
+.stats {
+  background:#F7F8FA;
+  color:#14263D
+}
+.cta {
+  background:linear-gradient(145deg,#F7F8FA,#e8edf2);
+  color:#14263D
+}
+.cta p {
+  color:#66717D
+}
+.notice {
+  border-left-color:#B79A60;
+  background:#f7f4eb
+}
+.card,.service {
+  border-color:#e2e6eb
+}
+.service-groups {
+  display:grid;
+  gap:36px;
+  margin-top:28px
+}
+.service-group {
+  background:#fff;
+  border:1px solid #e5e8ec;
+  border-radius:15px;
+  padding:28px;
+  box-shadow:0 8px 26px #14263d08
+}
+.group-head {
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:23px
+}
+.group-head h3 {
+  margin:0 0 5px;
+  font-size:23px;
+  color:#14263D
+}
+.group-head p {
+  margin:0;
+  color:#66717D;
+  font-size:14px
+}
+.group-icon {
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  background:#F7F8FA;
+  border-radius:10px;
+  color:#B79A60;
+  font-size:26px;
+  flex-shrink:0
+}
+.service-group .services {
+  gap:14px
+}
+.service-group .service {
+  background:#F7F8FA;
+  border:1px solid #e7eaee;
+  border-radius:10px;
+  padding:24px
+}
+.service-group .service:hover {
+  background:#fff
+}
+footer {
+  background:#14263D
+}
+@media(max-width:680px) {
+  .service-group {
+    padding:18px
+  }
+  .group-head h3 {
+    font-size:20px
+  }
+}
+/* Alyra 2026 | direção visual editorial, inspirada na prévia aprovada */
+
+:root {
+  --ink:#14263d;
+  --navy:#14263d;
+  --gold:#c9a961;
+  --paper:#faf8f4;
+  --line:#e5ded3;
+  --muted:#657080
+}
+body {
+  color:var(--ink);
+  background:#fffdf9
+}
+.nav {
+  background:#fffdf9f5;
+  border-bottom:1px solid #e9e2d7
+}
+.navinner {
+  min-height:68px
+}
+.brandmark {
+  background:#14263d
+}
+.links a:hover {
+  color:#a57a31
+}
+.links>a:not(.btn) {
+  position:relative
+}
+.links>a:not(.btn):hover:after {
+  content:"";
+  position:absolute;
+  bottom:-24px;
+  left:0;
+  right:0;
+  height:2px;
+  background:#c9a961
+}
+.btn {
+  background:#14263d;
+  border-color:#14263d;
+  color:#fff;
+  border-radius:6px
+}
+.btn:hover {
+  background:#243e5a;
+  border-color:#243e5a
+}
+.hero {
+  position:relative;
+  background:linear-gradient(115deg,#10243a 0%,#172f49 64%,#203e58 100%);
+  color:#fff;
+  padding:82px 0 54px;
+  overflow:hidden
+}
+.hero .wrap {
+  padding-bottom:0;
+  position:relative;
+  z-index:1
+}
+.hero .wrap:after {
+  display:none
+}
+.hero h1 {
+  font-size:clamp(37px,4.5vw,60px);
+  max-width:710px;
+  line-height:1.13;
+  margin:18px 0 24px;
+  color:#fff;
+  letter-spacing:-.04em
+}
+.hero h1 span {
+  color:#e6bd6d
+}
+.hero .eyebrow {
+  color:#edc87a;
+  letter-spacing:.21em
+}
+.hero p {
+  max-width:620px;
+  color:#dce6ef;
+  font-size:15px
+}
+.hero p:first-of-type {
+  border-left:3px solid #d4a956;
+  padding-left:17px
+}
+.hero .actions {
+  margin-top:28px
+}
+.hero .btn.light {
+  background:linear-gradient(120deg,#f4ddae,#d6ab5f);
+  border-color:#e6c282;
+  color:#14263d
+}
+.hero .btn.light:hover {
+  background:#f4d69b;
+  border-color:#f4d69b
+}
+.hero .btn.outline {
+  color:#fff!important;
+  border-color:#9fb0bf!important
+}
+.hero .btn.outline:hover {
+  background:#ffffff15
+}
+.hero .pillars {
+  margin-top:70px;
+  gap:0;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  max-width:1040px
+}
+.hero .pillar {
+  background:transparent;
+  border:0;
+  border-right:1px solid #ffffff25;
+  border-radius:0;
+  padding:12px 23px 12px 45px;
+  box-shadow:none;
+  position:relative
+}
+.hero .pillar:first-child {
+  padding-left:40px
+}
+.hero .pillar:last-child {
+  border-right:0
+}
+.hero .pillar:before {
+  content:"";
+  position:absolute;
+  left:12px;
+  top:18px;
+  width:16px;
+  height:16px;
+  border:2px solid #e2b65e;
+  border-radius:3px
+}
+.hero .pillar:nth-child(2):before {
+  transform:rotate(45deg);
+  border-radius:0
+}
+.hero .pillar:nth-child(3):before {
+  border-radius:0;
+  border-left-width:5px;
+  border-right-width:5px
+}
+.hero .pillar b {
+  font-size:13px;
+  color:#fff
+}
+.hero .pillar small {
+  font-size:12px;
+  color:#dce5ed
+}
+.hero .tag {
+  color:#e8c27d;
+  margin-top:28px
+}
+.hero-art {
+  position:absolute;
+  right:-5%;
+  top:6%;
+  width:43%;
+  height:67%;
+  pointer-events:none;
+  opacity:.88;
+  transform:rotate(10deg);
+  border:1px solid #d8a54c;
+  border-radius:26px;
+  padding:12px;
+  box-shadow:0 24px 80px #0004
+}
+.hero-art svg {
+  width:100%;
+  height:100%;
+  border-radius:16px;
+  display:block;
+  background:#162a40
+}
+.hero-art:after {
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px solid #ffffff18;
+  border-radius:19px
+}
+.hero-art+* {
+  position:relative
+}
+.section {
+  padding:80px 0
+}
+.section.alt {
+  background:#faf8f4
+}
+.hero+section {
+  background:linear-gradient(180deg,#f3eee5,#fffdf9 180px)
+}
+.heading h2 {
+  color:#14263d
+}
+.eyebrow {
+  color:#aa7d32
+}
+.feature {
+  background:linear-gradient(120deg,#14263d,#274765);
+  border-radius:12px
+}
+.service-groups {
+  display:grid;
+  gap:34px
+}
+.service-group {
+  position:relative;
+  overflow:hidden;
+  background:#fffdf9;
+  border:1px solid #e5ded3;
+  border-radius:16px;
+  padding:32px;
+  box-shadow:0 12px 35px #14263d07
+}
+.service-group:after {
+  content:"";
+  position:absolute;
+  right:-110px;
+  bottom:-140px;
+  width:250px;
+  height:250px;
+  background:#f1e8d9;
+  transform:rotate(45deg);
+  z-index:0;
+  pointer-events:none
+}
+.service-group>* {
+  position:relative;
+  z-index:1
+}
+.group-head {
+  display:flex;
+  gap:18px;
+  align-items:center;
+  margin-bottom:25px
+}
+.group-head h3 {
+  font-size:26px;
+  color:#14263d;
+  margin:0 0 3px
+}
+.group-head p {
+  font-size:14px;
+  color:#657080;
+  margin:0
+}
+.group-icon {
+  width:46px;
+  height:46px;
+  flex:none;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:#f3e5c9;
+  color:#a77828;
+  font-size:25px
+}
+.service {
+  background:#fffdf9;
+  border:1px solid #dcd1c1;
+  border-radius:11px;
+  padding:24px 25px 24px 70px;
+  position:relative;
+  min-height:140px
+}
+.service:before {
+  content:"";
+  position:absolute;
+  left:23px;
+  top:28px;
+  width:28px;
+  height:28px;
+  border-radius:9px;
+  background:linear-gradient(140deg,#f6e9c9,#e1bd72);
+  box-shadow:inset 0 0 0 1px #d6b576
+}
+.service:nth-child(2):before {
+  border-radius:50%
+}
+.service:nth-child(3):before {
+  transform:rotate(12deg)
+}
+.service:nth-child(4):before {
+  border-radius:5px
+}
+.service h3 {
+  font-size:17px;
+  color:#14263d;
+  margin-bottom:8px
+}
+.service p {
+  font-size:13px
+}
+.service:hover {
+  border-color:#d2ae6c;
+  box-shadow:0 8px 24px #14263d0b
+}
+.card {
+  background:#fffdf9;
+  border-color:#e6dfd4
+}
+.card .num {
+  color:#aa7d32
+}
+.cta {
+  background:linear-gradient(120deg,#14263d,#264764);
+  color:#fff
+}
+.cta p {
+  color:#e2eaf0
+}
+.cta .btn.light {
+  background:#e7c681;
+  color:#14263d;
+  border-color:#e7c681
+}
+.cta .btn.outline {
+  color:#fff!important;
+  border-color:#b2c2d1!important
+}
+#contato {
+  position:relative;
+  overflow:hidden;
+  background:#fffdf9
+}
+#contato:after {
+  content:"";
+  position:absolute;
+  width:340px;
+  height:340px;
+  right:-170px;
+  bottom:-185px;
+  background:#14263d;
+  transform:rotate(45deg);
+  border:3px solid #c9a961;
+  pointer-events:none
+}
+#contato .wrap {
+  position:relative;
+  z-index:1
+}
+.contact {
+  gap:70px;
+  grid-template-columns:1.4fr 1fr
+}
+.contactinfo {
+  border-left:2px solid #c9a961;
+  padding-left:34px;
+  align-self:start;
+  margin-top:48px
+}
+.contactinfo h3 {
+  font-size:17px;
+  margin:0 0 8px
+}
+.contactinfo h3:not(:first-child) {
+  margin-top:26px
+}
+.contactinfo a {
+  color:#263e58
+}
+.form input,.form select,.form textarea {
+  background:#fff;
+  border-color:#d7dce3
+}
+footer {
+  background:#14263d
+}
+@media(max-width:900px) {
+  .hero-art {
+    width:35%;
+    opacity:.28;
+    right:-8%
+  }
+  .hero h1 {
+    max-width:730px
+  }
+  .hero p {
+    max-width:630px
+  }
+}
+@media(max-width:800px) {
+  .hero {
+    padding:65px 0 40px
+  }
+  .hero .pillars {
+    grid-template-columns:1fr;
+    margin-top:44px
+  }
+  .hero .pillar {
+    border-right:0;
+    border-bottom:1px solid #ffffff22;
+    padding-left:45px!important
+  }
+  .hero .pillar:last-child {
+    border-bottom:0
+  }
+  .hero-art {
+    display:none
+  }
+  .contact {
+    grid-template-columns:1fr
+  }
+  .contactinfo {
+    margin-top:0
+  }
+  .service-group {
+    padding:22px
+  }
+  .group-head h3 {
+    font-size:22px
+  }
+}
+@media(max-width:480px) {
+  .hero h1 {
+    font-size:36px
+  }
+  .service {
+    padding:23px 20px 23px 62px
+  }
+  .service:before {
+    left:17px
+  }
+  .group-head {
+    align-items:flex-start
+  }
+}
+/* Ajuste de legibilidade: remover ornamentos dos serviços */
+
+.service-group:after,.service:before {
+  content:none!important;
+  display:none!important
+}
+.service {
+  padding:25px 27px!important;
+  min-height:0!important;
+  background:#fff!important
+}
+.service h3 {
+  margin:0 0 10px!important;
+  line-height:1.4
+}
+.service-group {
+  background:#fff;
+  border-color:#e5e8ec;
+  overflow:visible
+}
+.service-group:after {
+  display:none
+}
+@media(max-width:480px) {
+  .service {
+    padding:21px!important
+  }
+}
+/* Foto aprovada no lugar do gráfico ilustrativo */
+
+.hero-art {
+  transform:none!important;
+  right:0!important;
+  top:12%!important;
+  width:42%!important;
+  height:68%!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:15px!important;
+  overflow:hidden!important;
+  box-shadow:0 20px 60px #07152550!important;
+  opacity:1!important
+}
+.hero-art img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block
+}
+.hero-art:after {
+  display:none!important
+}
+@media(max-width:900px) {
+  .hero-art {
+    width:36%!important;
+    opacity:.38!important;
+    right:-4%!important
+  }
+}
+@media(max-width:680px) {
+  .hero-art {
+    display:none!important
+  }
+}
+/* Integração fotográfica: imagem fundida ao fundo do hero */
+
+.hero {
+  background:linear-gradient(105deg,#101f32 0%,#14283e 56%,#192e44 100%)!important
+}
+.hero-art {
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+  transform:none!important;
+  opacity:.8!important;
+  pointer-events:none!important;
+  z-index:0!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 78%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 78%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 78%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 78%,transparent 100%)!important;
+  -webkit-mask-composite:source-in!important;
+  mask-composite:intersect!important
+}
+.hero-art img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.78) saturate(.85) contrast(1.08)
+}
+.hero .wrap {
+  position:relative;
+  z-index:1
+}
+@media(max-width:900px) {
+  .hero-art {
+    opacity:.28!important
+  }
+}
+@media(max-width:680px) {
+  .hero-art {
+    display:none!important
+  }
+}
+/* Foto de destaque ampliada, com fusão suave ao fundo */
+
+.hero-art {
+  width:66%!important;
+  height:105%!important;
+  right:-5%!important;
+  top:-3%!important;
+  opacity:.86!important
+}
+.hero-art img {
+  object-position:center center
+}
+@media(max-width:900px) {
+  .hero-art {
+    width:72%!important;
+    height:100%!important;
+    right:-16%!important;
+    top:0!important;
+    opacity:.35!important
+  }
+}
+@media(max-width:680px) {
+  .hero-art {
+    display:none!important
+  }
+}
+/* Refinamento editorial dos serviços e contato */
+
+#contato:after,.service-group:after,.service:before {
+  content:none!important;
+  display:none!important
+}
+.group-icon {
+  display:none!important
+}
+.service-groups {
+  gap:26px!important
+}
+.service-group {
+  background:#fff!important;
+  border:1px solid #e3e7eb!important;
+  border-radius:12px!important;
+  padding:34px 36px!important;
+  box-shadow:0 8px 24px #14263d06!important;
+  overflow:visible!important
+}
+.group-head {
+  margin-bottom:23px!important;
+  padding-bottom:19px;
+  border-bottom:1px solid #e6e9ec;
+  align-items:start!important
+}
+.group-head h3 {
+  font-size:25px!important;
+  letter-spacing:-.025em
+}
+.service-group .services {
+  gap:0 30px!important
+}
+.service-group .service {
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  transform:none!important;
+  min-height:0!important;
+  padding:19px 0 20px!important;
+  border-bottom:1px solid #e8ebee!important
+}
+.service-group .service:hover {
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none!important
+}
+.service-group .service h3 {
+  font-size:17px!important;
+  margin:0 0 9px!important
+}
+.service-group .service p {
+  font-size:14px!important;
+  line-height:1.65!important
+}
+#contato {
+  background:#fffdf9!important
+}
+@media(max-width:680px) {
+  .service-group {
+    padding:23px 20px!important
+  }
+  .service-group .services {
+    grid-template-columns:1fr!important
+  }
+  .group-head h3 {
+    font-size:22px!important
+  }
+}
+  </style>
+ </head>
+ <body>
+  <header class="nav">
+   <div class="wrap navinner">
+    <a class="brand" href="#inicio">
+     <span class="brandmark">
+      A
+     </span>
+     ALYRA
+    </a>
+    <nav class="links" id="links">
+     <a href="#inicio">
+      Início
+     </a>
+     <a href="#servicos">
+      Serviços
+     </a>
+     <a href="#sobre">
+      Sobre a Alyra
+     </a>
+     <a href="#contato">
+      Contato
+     </a>
+     <a class="btn" href="#contato">
+      Avaliar meu cronograma
+     </a>
+    </nav>
+    <button aria-expanded="false" aria-label="Abrir menu" class="menu" id="menu">
+     ☰
+    </button>
+   </div>
+  </header>
+  <main>
+   <section class="hero" id="inicio">
+    <div aria-hidden="true" class="hero-art">
+     <img alt="" decoding="async" loading="eager" src="main.webp"/>
+    </div>
+    <div class="wrap">
+     <div class="eyebrow">
+      Consultoria em Planejamento e Cronogramas Industriais
+     </div>
+     <h1>
+      O cronograma aponta uma data.
+      <br/>
+      <span>
+       O projeto tem condições de cumpri-la?
+      </span>
+     </h1>
+     <p>
+      A Alyra confronta o cronograma com o contrato, os marcos do projeto, a sequência de execução e a disponibilidade de recursos.
+     </p>
+     <p>
+      Identificamos inconsistências, investigamos suas consequências e indicamos o que precisa ser corrigido.
+     </p>
+     <div class="actions">
+      <a class="btn light" href="prediagnostico/index.html" id="scanlink">
+       Fazer pré-diagnóstico
+      </a>
+      <a class="btn outline" href="#diagnostico" style="color:white;border-color:#a2b9bd">
+       Conhecer o diagnóstico
+      </a>
+     </div>
+     <p class="tag">
+      Primavera P6 • MS Project
+     </p>
+    </div>
+   </section>
+   <section class="section alt">
+    <div class="wrap">
+     <div class="heading">
+      <span class="eyebrow">
+       Confiabilidade do planejamento
+      </span>
+      <h2>
+       Quando o cronograma não corresponde à realidade do projeto
+      </h2>
+      <p>
+       Um cronograma pode estar atualizado e ainda assim apresentar uma previsão de prazo sem sustentação. Aqui investigamos todas as inconsistências que precisam ser esclarecidas antes de comprometer a execução e as decisões da gestão.
+      </p>
+     </div>
+     <div class="grid">
+      <article class="card">
+       <span class="num">
+        01
+       </span>
+       <h3>
+        Caminho crítico que não faz sentido
+       </h3>
+       <p>
+        O cronograma aponta uma sequência crítica, mas a equipe identifica outras atividades que realmente condicionam a conclusão do projeto.
+       </p>
+      </article>
+      <article class="card">
+       <span class="num">
+        02
+       </span>
+       <h3>
+        Recursos que não fecham
+       </h3>
+       <p>
+        A programação considera equipes, equipamentos ou produtividade incompatíveis com a disponibilidade prevista para a execução.
+       </p>
+      </article>
+      <article class="card">
+       <span class="num">
+        03
+       </span>
+       <h3>
+        Marcos sem sustentação
+       </h3>
+       <p>
+        Datas contratuais ou gerenciais são mantidas sem que a sequência das atividades demonstre como serão cumpridas.
+       </p>
+      </article>
+      <article class="card">
+       <span class="num">
+        04
+       </span>
+       <h3>
+        O avanço informado não explica o atraso
+       </h3>
+       <p>
+        Registros de campo, medições e atualizações apresentam divergências que dificultam entender a situação real do projeto.
+       </p>
+      </article>
+     </div>
+     <div class="notice">
+      Essas inconsistências podem afetar decisões de mobilização, custos, recuperação de prazo e responsabilidades contratuais.
+     </div>
+    </div>
+   </section>
+   <section class="section" id="servicos">
+    <div class="wrap">
+     <div class="heading">
+      <span class="eyebrow">
+       Serviços
+      </span>
+      <h2>
+       Como atuamos
+      </h2>
+      <p>
+       Soluções técnicas para estruturar o planejamento, avaliar a confiabilidade das previsões e apoiar decisões relacionadas ao prazo.
+      </p>
+     </div>
+     <div class="feature" id="diagnostico">
+      <span class="tag">
+       Serviço em destaque
+      </span>
+      <h3>
+       Diagnóstico e Auditoria de Confiabilidade
+      </h3>
+      <p>
+       Uma análise independente que vai além da verificação do arquivo. A Alyra avalia a consistência técnica do cronograma e confronta suas informações com os marcos, as condições de execução e os documentos do projeto.
+      </p>
+      <div class="chips">
+       <span class="chip">
+        Preventivo
+       </span>
+       <span class="chip">
+        Defesa técnica
+       </span>
+       <span class="chip">
+        Referenciais DCMA e GAO
+       </span>
+       <span class="chip">
+        Relatório técnico
+       </span>
+       <span class="chip">
+        Plano de ação
+       </span>
+       <span class="chip">
+        Recuperação de prazos
+       </span>
+      </div>
+      <a class="btn light" href="#contato">
+       Solicitar proposta de diagnóstico
+      </a>
+     </div>
+     <div class="service-groups">
+      <div class="service-group">
+       <div class="group-head">
+        <span aria-hidden="true" class="group-icon">
+         ◇
+        </span>
+        <div>
+         <h3>
+          Diagnósticos e Auditorias
+         </h3>
+         <p>
+          Avaliações técnicas independentes da confiabilidade dos prazos e das decisões do projeto.
+         </p>
+        </div>
+       </div>
+       <div class="services">
+        <article class="service">
+         <h3>
+          Validação de Baseline
+         </h3>
+         <p>
+          Avaliação técnica do cronograma apresentado para aprovação como referência de planejamento e controle.
+         </p>
+        </article>
+        <article class="service">
+         <h3>
+          Due diligence de prazo
+         </h3>
+         <p>
+          Due diligence de prazo para identificar fragilidades e condições que precisam ser esclarecidas antes da contratação.
+         </p>
+        </article>
+        <article class="service">
+         <h3>
+          Análise e Validação de Planos de Recuperação
+         </h3>
+         <p>
+          Verificação da viabilidade das ações propostas, confrontando cronograma, recursos, registros de execução e marcos contratuais.
+         </p>
+        </article>
+        <article class="service">
+         <h3>
+          Análise Técnica de Atrasos
+         </h3>
+         <p>
+          Reconstrução técnica dos eventos de atraso, suas evidências e seus efeitos sobre o prazo do projeto.
+         </p>
+        </article>
+       </div>
+      </div>
+      <div class="service-group">
+       <div class="group-head">
+        <span aria-hidden="true" class="group-icon">
+         ▦
+        </span>
+        <div>
+         <h3>
+          Planejamento e Controle
+         </h3>
+         <p>
+          Estruturação e acompanhamento de cronogramas para apoiar a execução e o atingimento dos resultados.
+         </p>
+        </div>
+       </div>
+       <div class="services">
+        <article class="service">
+         <h3>
+          Elaboração e Estruturação de Cronogramas
+         </h3>
+         <p>
+          Cronogramas desenvolvidos conforme o escopo, as premissas e a estratégia de execução do projeto, em Primavera P6 ou MS Project.
+         </p>
+        </article>
+        <article class="service">
+         <h3>
+          Acompanhamento Técnico das Atualizações
+         </h3>
+         <p>
+          Comparação de versões do cronograma para identificar alterações de lógica, mudanças no caminho crítico e impactos nos marcos.
+         </p>
+        </article>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section alt">
+    <div class="wrap">
+     <div class="heading">
+      <span class="eyebrow">
+       Metodologia
+      </span>
+      <h2>
+       Como conduzimos o diagnóstico
+      </h2>
+      <p>
+       O cronograma é o ponto de partida. A análise considera também as premissas, os documentos e as condições de execução do projeto.
+      </p>
+     </div>
+     <div class="steps">
+      <article class="card">
+       <span class="num">
+        01
+       </span>
+       <h3>
+        Entendemos o projeto
+       </h3>
+       <p>
+        Levantamos marcos, compromissos contratuais, premissas e restrições.
+       </p>
+      </article>
+      <article class="card">
+       <span class="num">
+        02
+       </span>
+       <h3>
+        Auditamos o cronograma
+       </h3>
+       <p>
+        Avaliamos vínculos, durações, caminho crítico, folgas e recursos.
+       </p>
+      </article>
+      <article class="card">
+       <span class="num">
+        03
+       </span>
+       <h3>
+        Confrontamos as informações
+       </h3>
+       <p>
+        Verificamos documentos, registros de execução e condições reais do projeto.
+       </p>
+      </article>
+      <article class="card">
+       <span class="num">
+        04
+       </span>
+       <h3>
+        Apresentamos as conclusões
+       </h3>
+       <p>
+        Entregamos constatações fundamentadas e recomendações priorizadas.
+       </p>
+      </article>
+     </div>
+     <div class="notice">
+      O escopo e a profundidade da análise são definidos conforme a fase do projeto, a documentação disponível e a finalidade do diagnóstico.
+     </div>
+    </div>
+   </section>
+   <section class="section" id="sobre">
+    <div class="wrap about">
+     <div>
+      <span class="eyebrow">
+       Sobre a Alyra
+      </span>
+      <h2>
+       Experiência em planejamento industrial aplicada à análise de cronogramas
+      </h2>
+      <p>
+       A Alyra foi fundada por Thamara Silva, engenheira com mais de 15 anos de experiência em planejamento e controle de projetos.
+      </p>
+      <p>
+       Sua trajetória inclui projetos industriais, CAPEX, grandes paradas de manutenção e descomissionamento, com atuação em planejamento, análise crítica de cronogramas e suporte à gestão.
+      </p>
+      <p>
+       Essa experiência orienta a forma como a Alyra trabalha: o cronograma é analisado em conjunto com as premissas e as condições reais do projeto, e não apenas como um arquivo de planejamento.
+      </p>
+     </div>
+     <div class="stats">
+      <div>
+       <strong>
+        15+ anos
+       </strong>
+       <span>
+        Experiência da fundadora
+       </span>
+      </div>
+      <div>
+       <strong>
+        CAPEX
+       </strong>
+       <span>
+        Projetos industriais
+       </span>
+      </div>
+      <div>
+       <strong>
+        P6 + Project
+       </strong>
+       <span>
+        Ferramentas de planejamento
+       </span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="cta">
+    <h2>
+     Você confia nas datas que estão orientando as decisões do seu projeto?
+    </h2>
+    <p>
+     Uma avaliação independente pode revelar fragilidades que não aparecem nos relatórios gerenciais e indicar o que precisa ser corrigido antes da próxima decisão relevante.
+    </p>
+    <div class="actions">
+     <a class="btn light" href="#contato">
+      Avaliar meu cronograma
+     </a>
+     <a class="btn outline" href="#contato">
+      Ver formulário demonstrativo
+     </a>
+    </div>
+   </section>
+   <section class="section" id="contato">
+    <div class="wrap contact">
+     <div>
+      <div class="heading">
+       <span class="eyebrow">
+        Contato
+       </span>
+       <h2>
+        Entre em Contato
+       </h2>
+       <p>
+        Conheça a interface do formulário em modo demonstrativo.
+       </p>
+      </div>
+      <form class="form" id="contactform">
+       <input aria-hidden="true" autocomplete="off" name="website" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
+       <div>
+        <label for="nome">
+         Nome
+        </label>
+        <input id="nome" name="nome" required=""/>
+       </div>
+       <div>
+        <label for="email">
+         E-mail
+        </label>
+        <input id="email" name="email" required="" type="email"/>
+       </div>
+       <div>
+        <label for="empresa">
+         Empresa
+        </label>
+        <input id="empresa" name="empresa"/>
+       </div>
+       <div>
+        <label for="telefone">
+         Telefone
+        </label>
+        <input id="telefone" name="telefone"/>
+       </div>
+       <div class="full">
+        <label for="servico">
+         Serviço de Interesse
+        </label>
+        <select id="servico" name="servico">
+         <option>
+          Diagnóstico/Auditoria de Cronograma
+         </option>
+         <option>
+          Elaboração de Cronograma
+         </option>
+         <option>
+          Validação de Baseline
+         </option>
+         <option>
+          Análise de Plano de Recuperação
+         </option>
+         <option>
+          Due diligence de prazo
+         </option>
+         <option>
+          Acompanhamento Técnico das Atualizações
+         </option>
+         <option>
+          Análise Técnica de Atrasos
+         </option>
+         <option>
+          Ainda não sei qual serviço preciso
+         </option>
+        </select>
+       </div>
+       <div class="full">
+        <label for="mensagem">
+         Mensagem
+        </label>
+        <textarea id="mensagem" name="mensagem" required="" rows="5"></textarea>
+       </div>
+       <div class="full">
+        <button class="btn" id="submitcontact" type="submit">
+         Testar formulário
+        </button>
+        <p aria-live="polite" class="mini" id="formstatus" role="status">
+         Versão demonstrativa: nenhuma informação será enviada ou armazenada.
+        </p>
+       </div>
+      </form>
+     </div>
+     <aside class="contactinfo">
+      <h3>
+       Sobre esta demonstração
+      </h3>
+      <p>
+       Esta é uma versão de portfólio do site institucional. O formulário funciona apenas como demonstração, sem envio ou armazenamento de dados.
+      </p>
+     </aside>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="wrap">
+    <span>
+     © 2026 Alyra Consultoria. Todos os direitos reservados.
+    </span>
+    <span>
+     Planejamento e Cronogramas Industriais
+    </span>
+   </div>
+  </footer>
+  <script>
+   const menu = document.getElementById('menu');
+const links = document.getElementById('links');
+
+menu.addEventListener('click', () => {
+  const isOpen = links.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(isOpen));
+});
+
+links.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    links.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const form = document.getElementById('contactform');
+const status = document.getElementById('formstatus');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!form.reportValidity()) return;
+
+  status.textContent = 'Demonstração concluída! Nenhuma informação foi enviada ou armazenada.';
+  status.style.color = '#167e83';
+  form.reset();
+});
+  </script>
+ </body>
+</html>

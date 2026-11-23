@@ -1,0 +1,1560 @@
+<!doctype html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Pré-avaliação Executiva de Risco do Cronograma | Alyra Consultoria" name="description"/>
+  <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+  <title>
+   Pré-avaliação Executiva de Risco do Cronograma | Alyra Consultoria
+  </title>
+  <style>
+   :root {
+  font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color: #172d35;
+  background: #f5f8f8;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header {
+  background: #102c36;
+  color: white;
+  padding: 26px 22px;
+  border-bottom: 4px solid #b99a62;
+}
+.wrap {
+  max-width: 1020px;
+  margin: auto;
+}
+.brand {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .07em;
+}
+.brand small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #b9d4d6;
+  letter-spacing: 0;
+  margin-left: 8px;
+}
+.hero {
+  background: linear-gradient(120deg,#102c36,#174852);
+  color: white;
+  padding: 56px 22px 60px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 11px;
+  color: #d4b983;
+  font-weight: 750;
+}
+h1 {
+  font-size: clamp(29px,4.8vw,46px);
+  line-height: 1.13;
+  max-width: 850px;
+  margin: 15px 0 20px;
+  letter-spacing: -.035em;
+}
+p {
+  line-height: 1.7;
+}
+.hero p {
+  color: #d7e4e5;
+  max-width: 800px;
+  margin: 0 0 15px;
+}
+.note {
+  border-left: 3px solid #b99a62;
+  padding-left: 16px;
+  font-size: 14px;
+}
+.content {
+  padding: 36px 22px 70px;
+}
+.progress-panel,.block,.finish {
+  background: white;
+  border: 1px solid #e0e8e9;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px #102c3608;
+}
+.progress-panel {
+  padding: 23px 27px;
+  margin-bottom: 22px;
+}
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.track {
+  height: 8px;
+  background: #e6eded;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.bar {
+  height: 100%;
+  width: 0;
+  background: #b69a68;
+  transition: width .2s;
+}
+.block {
+  padding: 30px;
+  margin-bottom: 22px;
+}
+.block-head {
+  border-bottom: 1px solid #e6ecec;
+  padding-bottom: 19px;
+  margin-bottom: 24px;
+}
+.number {
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #967344;
+  font-weight: 800;
+}
+.block h2 {
+  font-size: 25px;
+  letter-spacing: -.025em;
+  margin: 7px 0;
+}
+.block-head p {
+  margin: 5px 0 0;
+  color: #61737b;
+  font-size: 14px;
+}
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 24px;
+}
+.field {
+  min-width: 0;
+}
+.field.wide {
+  grid-column: 1/-1;
+}
+.field>label,.question {
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+.required {
+  color: #a76b3b;
+}
+input[type=text],input[type=email],input[type=tel] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd7d9;
+  border-radius: 7px;
+  font: inherit;
+  background: #fff;
+  outline-offset: 2px;
+}
+input:focus-visible {
+  outline: 2px solid #237a82;
+}
+.choices {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 9px;
+}
+.choice {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 11px 12px;
+  border: 1px solid #dfe8e9;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 44px;
+}
+.choice:has(input:checked) {
+  background: #eaf5f3;
+  border-color: #26838a;
+}
+.choice input {
+  accent-color: #166b73;
+  flex: none;
+}
+.consent {
+  background: #f5f8f8;
+}
+.actions {
+  text-align: center;
+  padding: 15px 0 30px;
+}
+.submit {
+  background: #126c73;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  padding: 17px 28px;
+  font-size: 15px;
+  font-weight: 750;
+  cursor: pointer;
+}
+.submit:hover {
+  background: #0b5359;
+}
+.submit:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+.privacy {
+  font-size: 12px;
+  color: #687b81;
+  max-width: 620px;
+  margin: 14px auto;
+}
+.finish {
+  padding: 25px;
+  margin-top: 12px;
+  text-align: center;
+  border-color: #b3d8d4;
+}
+.finish[hidden] {
+  display: none;
+}
+.finish h2 {
+  color: #116b72;
+}
+footer {
+  padding: 25px;
+  text-align: center;
+  font-size: 12px;
+  color: #7b8b90;
+  border-top: 1px solid #e0e8e9;
+}
+@media (max-width:680px) {
+  .fields,.choices {
+    grid-template-columns: 1fr;
+  }
+  .block {
+    padding: 21px;
+  }
+  .hero {
+    padding: 39px 22px;
+  }
+  .brand small {
+    display: block;
+    margin: 4px 0 0;
+  }
+}
+*/* Alyra · identidade visual unificada */*
+
+:root {
+  color: #23374a;
+  background: #F5F5F5;
+}
+body {
+  background: #F5F5F5;
+}
+header {
+  background: #1F4E78;
+  border-bottom: 2px solid #C9A961;
+  padding: 20px 22px;
+}
+.brand small {
+  color: #e3eaf2;
+}
+.hero {
+  background: linear-gradient(120deg,#1F4E78,#28567e);
+  padding: 48px 22px 50px;
+}
+.eyebrow {
+  color: #e8cd93;
+}
+.hero p {
+  color: #e8edf3;
+}
+.note {
+  border-left-color: #C9A961;
+}
+.content {
+  padding-top: 30px;
+}
+.progress-panel,.block,.finish {
+  border-color: #e4e8ec;
+  border-radius: 10px;
+  box-shadow: none;
+}
+.progress-panel {
+  padding: 22px 26px;
+}
+.track {
+  background: #e9edf1;
+}
+.bar {
+  background: #C9A961;
+}
+.block {
+  padding: 28px;
+  margin-bottom: 18px;
+}
+.block-head {
+  border-bottom-color: #e9edf1;
+}
+.number {
+  color: #9a793d;
+}
+.block-head p {
+  color: #697787;
+}
+.field>label,.question {
+  color: #263b50;
+}
+.required {
+  color: #a47a32;
+}
+input[type=text],input[type=email],input[type=tel] {
+  border-color: #d6dde4;
+  border-radius: 7px;
+}
+input:focus-visible {
+  outline-color: #1F4E78;
+}
+.choice {
+  border-color: #e2e7ec;
+  border-radius: 7px;
+}
+.choice:has(input:checked) {
+  background: #f2f5f8;
+  border-color: #1F4E78;
+}
+.choice input {
+  accent-color: #1F4E78;
+}
+.consent {
+  background: #f8f9fa;
+}
+.submit {
+  background: #1F4E78;
+  border-radius: 7px;
+}
+.submit:hover {
+  background: #173c5d;
+}
+.finish {
+  border-color: #d5e2ee;
+}
+.finish h2 {
+  color: #1F4E78;
+}
+footer {
+  border-top-color: #e1e5e9;
+}
+@media (max-width:680px) {
+  .block {
+    padding: 21px;
+  }
+  .hero {
+    padding: 37px 22px 40px;
+  }
+}
+*/* Refinamento visual: gradientes leves e leitura confortável */*
+
+:root {
+  background: #f8fafb;
+  color: #283e52;
+}
+body {
+  background: linear-gradient(180deg,#f2f6f9 0%,#fafbfc 360px,#f7f9fa 100%);
+}
+header {
+  background: #fff;
+  color: #1F4E78;
+  border-bottom: 1px solid #e4eaf0;
+}
+.brand small {
+  color: #60788d;
+}
+header a[href*="alyraconsultoria"] {
+  color: #1F4E78 !important;
+  text-decoration: none !important;
+  transition: color .2s;
+}
+header a[href*="alyraconsultoria"]:hover {
+  color: #98773b !important;
+}
+.hero {
+  background: linear-gradient(140deg,#edf3f8 0%,#f7f9fb 58%,#fff 100%);
+  color: #1F4E78;
+  border-bottom: 1px solid #e7edf2;
+}
+.eyebrow {
+  color: #9b7b3e;
+}
+.hero p {
+  color: #526b7f;
+}
+.note {
+  border-left-color: #C9A961;
+  color: #5b7184;
+}
+.progress-panel,.block,.finish {
+  background: #fff;
+  border: 1px solid #e7ebef;
+  border-radius: 13px;
+  box-shadow: 0 6px 26px #1f4e7806;
+}
+.block {
+  transition: box-shadow .25s ease,border-color .25s ease;
+}
+.block:hover {
+  border-color: #dbe4ec;
+  box-shadow: 0 9px 30px #1f4e7809;
+}
+.choice {
+  transition: background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.choice:hover {
+  background: #f7f9fb;
+  border-color: #cbd9e6;
+}
+.choice:has(input:checked) {
+  background: #edf3f8;
+  border-color: #9cb5cb;
+}
+.submit {
+  transition: background .2s ease,box-shadow .2s ease;
+}
+.submit:hover {
+  box-shadow: 0 5px 16px #1f4e7825;
+}
+footer {
+  background: #f7f9fa;
+}
+@media (prefers-reduced-motion:reduce) {
+  .block,.choice,.submit,header a[href*="alyraconsultoria"] {
+    transition: none;
+  }
+}
+*/* Transição contínua: navy até a área do questionário */*
+
+header {
+  background: #1F4E78;
+  color: #fff;
+  border-bottom: 1px solid #ffffff28;
+}
+.brand small {
+  color: #e5edf4;
+}
+header a[href*="alyraconsultoria"] {
+  color: #fff !important;
+}
+header a[href*="alyraconsultoria"]:hover {
+  color: #e8d09b !important;
+}
+.hero {
+  background: linear-gradient(180deg,#1F4E78 0%,#38658b 52%,#eaf0f5 100%);
+  color: #fff;
+  border-bottom: 0;
+  padding-bottom: 100px;
+}
+.hero .eyebrow {
+  color: #ead19c;
+}
+.hero h1 {
+  color: #fff;
+}
+.hero p {
+  color: #edf2f6;
+}
+.hero .note {
+  color: #edf2f6;
+}
+body {
+  background: #f7f9fb;
+}
+.content {
+  background: linear-gradient(180deg,#eaf0f5 0%,#f7f9fb 250px,#f7f9fb 100%);
+  max-width: none;
+  padding-left: max(22px,calc((100% - 1020px)/2));
+  padding-right: max(22px,calc((100% - 1020px)/2));
+}
+*/* Correção da emenda: mesmo tom exato entre hero e formulário */*
+
+.hero {
+  background: linear-gradient(180deg,#1F4E78 0%,#38658b 52%,#eaf0f5 100%);
+  padding-bottom: 85px;
+}
+.content {
+  background: linear-gradient(180deg,#eaf0f5 0%,#f7f9fb 260px,#f7f9fb 100%);
+  margin-top: 0;
+}
+*/* Paleta Alyra revisada */*
+
+:root {
+  color: #14263D;
+  background: #F7F8FA;
+}
+body {
+  background: #F7F8FA;
+  color: #14263D;
+}
+header {
+  background: #14263D;
+  color: #fff;
+}
+.brand small {
+  color: #e6ebf0;
+}
+.hero {
+  background: linear-gradient(180deg,#14263D 0%,#243d57 55%,#F7F8FA 100%);
+  color: #fff;
+}
+.hero h1 {
+  color: #fff;
+}
+.hero .eyebrow {
+  color: #e3c78e;
+}
+.hero p,.hero .note {
+  color: #f1f3f6;
+}
+.content {
+  background: linear-gradient(180deg,#F7F8FA,#F7F8FA);
+}
+.progress-panel,.block,.finish {
+  border-color: #e2e6eb;
+}
+.number {
+  color: #9b7c44;
+}
+.bar {
+  background: #B79A60;
+}
+.choice input {
+  accent-color: #14263D;
+}
+.choice:has(input:checked) {
+  background: #f1f3f6;
+  border-color: #8393a3;
+}
+.submit {
+  background: #14263D;
+}
+.submit:hover {
+  background: #263e58;
+}
+.finish h2 {
+  color: #14263D;
+}
+*/* Alyra | visual editorial alinhado ao site institucional */*
+
+:root {
+  color: #14263d;
+  background: #faf8f4;
+}
+body {
+  background: #faf8f4;
+  color: #14263d;
+}
+header {
+  background: #14263d;
+  border-bottom: 1px solid #ffffff27;
+  padding: 19px 22px;
+}
+header .brand {
+  letter-spacing: .09em;
+}
+header a[href*="alyraconsultoria"] {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(125deg,#14263d 0%,#203d59 68%,#304f69 100%);
+  color: #fff;
+  padding: 55px 22px 95px;
+}
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  width: 230px;
+  height: 300px;
+  border: 1px solid #c9a961;
+  border-radius: 24px;
+  transform: rotate(16deg);
+  background: repeating-linear-gradient(0deg,transparent 0 35px,#ffffff17 36px 37px),repeating-linear-gradient(90deg,transparent 0 50px,#ffffff14 51px 52px);
+  box-shadow: 0 20px 60px #0003;
+  opacity: .65;
+}
+.hero h1 {
+  max-width: 680px;
+  color: #fff;
+  font-size: clamp(32px,4vw,47px);
+}
+.hero p {
+  max-width: 710px;
+  color: #e7edf3;
+}
+.hero .eyebrow {
+  color: #edc87a;
+}
+.hero .note {
+  max-width: 710px;
+  color: #e6edf4;
+  background: #ffffff0d;
+  border: 1px solid #ffffff30;
+  border-left: 3px solid #c9a961;
+  padding: 14px 17px;
+  border-radius: 7px;
+}
+.content {
+  background: linear-gradient(180deg,#edf0f2 0%,#faf8f4 180px,#faf8f4 100%);
+  position: relative;
+  padding-top: 0;
+}
+.progress-panel {
+  position: relative;
+  margin-top: -30px;
+  z-index: 2;
+}
+.progress-panel,.block,.finish {
+  border: 1px solid #e4ddd2;
+  border-radius: 13px;
+  box-shadow: 0 9px 26px #14263d09;
+}
+.bar {
+  background: linear-gradient(90deg,#b48b3e,#d8b76e);
+}
+.number {
+  color: #a77930;
+}
+.choice:has(input:checked) {
+  background: #faf3e5;
+  border-color: #c9a961;
+}
+.choice input {
+  accent-color: #14263d;
+}
+.submit {
+  background: #14263d;
+}
+.submit:hover {
+  background: #294965;
+}
+input:focus-visible {
+  outline-color: #c9a961;
+}
+@media (max-width:680px) {
+  .hero {
+    padding: 42px 22px 74px;
+  }
+  .hero:after {
+    display: none;
+  }
+  .progress-panel {
+    margin-top: -22px;
+  }
+}
+*/* Pré-diagnóstico: painel executivo premium */*
+
+:root {
+  --alyra-gold: #c9a961;
+  --alyra-ink: #14263d;
+}
+header {
+  position: relative;
+  z-index: 4;
+  box-shadow: 0 3px 20px #0c1c2e1c;
+}
+header .wrap {
+  max-width: 1120px;
+}
+.hero {
+  padding: 66px 22px 106px;
+  background: radial-gradient(ellipse at 80% 35%,#365877 0%,transparent 43%),linear-gradient(125deg,#102238,#1a354e 75%,#233f58);
+}
+.hero .wrap {
+  max-width: 1120px;
+}
+.hero .eyebrow {
+  font-size: 12px;
+  letter-spacing: .21em;
+}
+.hero h1 {
+  font-size: clamp(36px,4.2vw,56px);
+  max-width: 720px;
+  line-height: 1.13;
+  letter-spacing: -.045em;
+  margin: 20px 0 22px;
+}
+.hero p {
+  font-size: 15px;
+  max-width: 690px;
+}
+.hero .note {
+  max-width: 690px;
+  background: #ffffff12;
+  backdrop-filter: blur(8px);
+  padding: 17px 20px;
+  border: 1px solid #ffffff30;
+  border-left: 3px solid #d5ac61;
+  box-shadow: 0 9px 26px #09182a28;
+}
+.hero:after {
+  display: none;
+}
+.assessment-art {
+  position: absolute;
+  right: 1%;
+  top: 8%;
+  width: 33%;
+  height: 74%;
+  border: 1px solid #d5ae63;
+  border-radius: 23px;
+  padding: 10px;
+  transform: rotate(10deg);
+  box-shadow: 0 30px 70px #09182955;
+  opacity: .9;
+  pointer-events: none;
+}
+.assessment-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.hero .wrap>*:not(.assessment-art) {
+  position: relative;
+  z-index: 1;
+}
+.content {
+  background: linear-gradient(180deg,#e8ecf0 0%,#faf8f4 260px,#faf8f4 100%);
+  padding-top: 0;
+  padding-bottom: 90px;
+}
+.progress-panel {
+  margin-top: -37px;
+  padding: 26px 29px 25px;
+  border-radius: 15px;
+  box-shadow: 0 16px 40px #14263d13;
+  border-color: #dfd8cb;
+}
+.progress-top {
+  font-size: 15px;
+  color: #14263d;
+}
+.progress-top span:last-child {
+  font-size: 21px;
+  color: #9c712b;
+}
+.progress-detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 16px 0 0;
+  font-size: 11px;
+  letter-spacing: .025em;
+  color: #6a7480;
+}
+.progress-detail span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.progress-detail span:before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: #c9a961;
+  border-radius: 50%;
+}
+.track {
+  height: 10px;
+  background: #e9e9e7;
+}
+.bar {
+  background: linear-gradient(90deg,#b38b43,#e2c37e);
+  box-shadow: 0 0 14px #c9a96170;
+}
+.block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  padding: 35px 37px 38px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px #14263d09;
+  background: #fffdfb;
+}
+.block:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(#e7c883,#b58b3e);
+}
+.block-head {
+  position: relative;
+  padding-left: 68px;
+  min-height: 58px;
+  margin-bottom: 27px;
+  border-bottom: 1px solid #ece6dc;
+}
+.block-head:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f5e8ce;
+  border: 1px solid #ecd6a8;
+}
+.block-head:after {
+  content: "01";
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  font-weight: 800;
+  font-size: 17px;
+  color: #9d742e;
+}
+.block:nth-of-type(2) .block-head:after {
+  content: "02";
+}
+.block:nth-of-type(3) .block-head:after {
+  content: "03";
+}
+.block:nth-of-type(4) .block-head:after {
+  content: "04";
+}
+.number {
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: #a67b32;
+}
+.block h2 {
+  font-size: 27px;
+  margin: 3px 0 5px;
+  color: #14263d;
+}
+.block-head p {
+  font-size: 13px;
+  color: #657180;
+  margin: 0 0 22px;
+}
+.fields {
+  gap: 25px 24px;
+}
+.field>label,.question {
+  color: #26384c;
+  font-size: 13px;
+}
+input[type=text],input[type=email],input[type=tel] {
+  background: #fff;
+  border: 1px solid #d8dfe6;
+  border-radius: 8px;
+  padding: 14px 15px;
+  min-height: 48px;
+  transition: border-color .2s,box-shadow .2s;
+}
+input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus {
+  border-color: #c9a961;
+  box-shadow: 0 0 0 4px #c9a96120;
+  outline: none;
+}
+.choices {
+  gap: 10px;
+}
+.choice {
+  position: relative;
+  border: 1px solid #e4e2dd;
+  background: #fff;
+  border-radius: 10px;
+  padding: 13px 15px;
+  transition: border-color .2s,background .2s,transform .2s;
+  min-height: 48px;
+}
+.choice:hover {
+  border-color: #c9a961;
+  background: #fffcf5;
+  transform: translateY(-1px);
+}
+.choice:has(input:checked) {
+  background: #fbf3e4;
+  border-color: #c9a961;
+  box-shadow: inset 0 0 0 1px #c9a961;
+}
+.choice input {
+  accent-color: #a67d35;
+}
+.consent {
+  background: #faf8f4;
+}
+.actions {
+  padding: 22px 0 36px;
+}
+.submit {
+  background: #14263d;
+  padding: 17px 32px;
+  border-radius: 9px;
+  box-shadow: 0 8px 20px #14263d24;
+}
+.submit:hover {
+  background: #264562;
+}
+.finish {
+  background: #fffdfb;
+}
+footer {
+  background: #14263d;
+  color: #d9e2ec;
+  border: 0;
+}
+@media (max-width:900px) {
+  .assessment-art {
+    width: 31%;
+    opacity: .3;
+    right: -5%;
+  }
+  .hero h1,.hero p,.hero .note {
+    max-width: 700px;
+  }
+}
+@media (max-width:680px) {
+  .hero {
+    padding: 46px 22px 84px;
+  }
+  .hero h1 {
+    font-size: 35px;
+  }
+  .assessment-art {
+    display: none;
+  }
+  .progress-panel {
+    padding: 22px 19px;
+    margin-top: -30px;
+  }
+  .progress-detail {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 9px 17px;
+  }
+  .block {
+    padding: 26px 21px 28px;
+  }
+  .block-head {
+    padding-left: 56px;
+  }
+  .block-head:before {
+    width: 42px;
+    height: 42px;
+  }
+  .block-head:after {
+    left: 12px;
+    top: 10px;
+  }
+  .block h2 {
+    font-size: 23px;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .choice,input[type=text],input[type=email],input[type=tel] {
+    transition: none;
+  }
+  .choice:hover {
+    transform: none;
+  }
+}
+*/* Foto aprovada no lugar do gráfico ilustrativo */*
+
+.assessment-art {
+  transform: none !important;
+  right: 0 !important;
+  top: 12% !important;
+  width: 42% !important;
+  height: 68% !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 15px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 60px #07152550 !important;
+  opacity: 1 !important;
+}
+.assessment-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.assessment-art:after {
+  display: none !important;
+}
+@media (max-width:900px) {
+  .assessment-art {
+    width: 36% !important;
+    opacity: .38 !important;
+    right: -4% !important;
+  }
+}
+@media (max-width:680px) {
+  .assessment-art {
+    display: none !important;
+  }
+}
+*/* Integração fotográfica: imagem fundida ao fundo do hero */*
+
+.hero {
+  background: linear-gradient(105deg,#101f32 0%,#14283e 56%,#192e44 100%) !important;
+}
+.assessment-art {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: none !important;
+  opacity: .8 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  -webkit-mask-image: linear-gradient(to right,transparent 0%,#000 24%,#000 78%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 78%,transparent 100%) !important;
+  mask-image: linear-gradient(to right,transparent 0%,#000 24%,#000 78%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 78%,transparent 100%) !important;
+  -webkit-mask-composite: source-in !important;
+  mask-composite: intersect !important;
+}
+.assessment-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.78) saturate(.85) contrast(1.08);
+}
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width:900px) {
+  .assessment-art {
+    opacity: .28 !important;
+  }
+}
+@media (max-width:680px) {
+  .assessment-art {
+    display: none !important;
+  }
+}
+*/* Foto de destaque ampliada, com fusão suave ao fundo */*
+
+.assessment-art {
+  width: 66% !important;
+  height: 105% !important;
+  right: -5% !important;
+  top: -3% !important;
+  opacity: .86 !important;
+}
+.assessment-art img {
+  object-position: center center;
+}
+@media (max-width:900px) {
+  .assessment-art {
+    width: 72% !important;
+    height: 100% !important;
+    right: -16% !important;
+    top: 0 !important;
+    opacity: .35 !important;
+  }
+}
+@media (max-width:680px) {
+  .assessment-art {
+    display: none !important;
+  }
+}
+*/* Ajuste sutil: foto do pré-diagnóstico um pouco maior */*
+
+.assessment-art {
+  width: 72% !important;
+  height: 110% !important;
+  right: -7% !important;
+  top: -5% !important;
+}
+@media (max-width:900px) {
+  .assessment-art {
+    width: 76% !important;
+    height: 105% !important;
+    right: -18% !important;
+    top: -2% !important;
+  }
+}
+@media (max-width:680px) {
+  .assessment-art {
+    display: none !important;
+  }
+}
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="wrap brand" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <span>
+     ALYRA CONSULTORIA
+     <small>
+      · Diagnóstico de Cronograma
+     </small>
+    </span>
+    <a href="../index.html" style="color:#fff;font-size:13px;text-decoration:underline;text-underline-offset:4px;letter-spacing:0;font-weight:500">
+     ← Voltar ao site da Alyra
+    </a>
+   </div>
+  </header>
+  <section class="hero">
+   <div class="wrap">
+    <div aria-hidden="true" class="assessment-art">
+     <img alt="" decoding="async" loading="eager" src="predig.webp"/>
+    </div>
+    <div class="eyebrow">
+     Análise preliminar de riscos
+    </div>
+    <h1>
+     Pré-avaliação Executiva de Risco do Cronograma
+    </h1>
+    <p>
+     Identifique sinais preliminares de que o cronograma do seu projeto pode estar ocultando riscos de atraso, pleito, perda de margem ou falha de decisão.
+    </p>
+    <p class="note">
+     Esta pré-avaliação não substitui uma análise técnica do cronograma. O objetivo é identificar sinais preliminares de risco a partir de perguntas sobre baseline, caminho crítico, restrições, interfaces e risco contratual.
+    </p>
+   </div>
+  </section>
+  <main class="wrap content">
+   <div class="progress-panel">
+    <div class="progress-top">
+     <span>
+      Preenchimento
+     </span>
+     <span id="percent">
+      0%
+     </span>
+    </div>
+    <div class="track">
+     <div class="bar" id="bar">
+     </div>
+    </div>
+    <div class="progress-detail">
+     <span>
+      Identificação
+     </span>
+     <span>
+      Contexto do projeto
+     </span>
+     <span>
+      Riscos técnicos
+     </span>
+     <span>
+      Percepção executiva
+     </span>
+    </div>
+   </div>
+   <form id="assessment">
+   </form>
+   <div class="actions">
+    <button class="submit" form="assessment" id="submit" type="submit">
+     Concluir pré-avaliação demonstrativa
+    </button>
+    <p class="privacy">
+     Versão demonstrativa: suas respostas permanecem nesta página e não são enviadas nem armazenadas.
+    </p>
+   </div>
+   <div class="finish" hidden="" id="finish" role="status">
+    <h2>
+     Pré-avaliação preenchida!
+    </h2>
+    <p>
+     Demonstração concluída! Nenhuma resposta foi enviada ou armazenada.
+    </p>
+   </div>
+  </main>
+  <footer>
+   © 2026 Alyra Consultoria · Pré-avaliação Executiva de Risco do Cronograma
+  </footer>
+  <script>
+   // Estrutura das perguntas do pré-diagnóstico.
+const sections = [
+  {
+    "title": "Identificação",
+    "desc": "Conte um pouco sobre você e sua empresa.",
+    "fields": [
+      [
+        "Nome completo",
+        "text",
+        true
+      ],
+      [
+        "Empresa",
+        "text",
+        true
+      ],
+      [
+        "Cargo",
+        "text",
+        true
+      ],
+      [
+        "E-mail",
+        "email",
+        true
+      ],
+      [
+        "WhatsApp",
+        "tel",
+        false
+      ],
+      [
+        "Segmento da empresa",
+        "radio",
+        true,
+        [
+          "Engenharia",
+          "Montagem industrial",
+          "EPC",
+          "Óleo e gás",
+          "Energia",
+          "Mineração",
+          "Siderurgia",
+          "Infraestrutura",
+          "Parada de manutenção",
+          "Outro"
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Contexto do Projeto",
+    "desc": "Informações gerais sobre o empreendimento e seu cronograma.",
+    "fields": [
+      [
+        "Tipo de projeto",
+        "radio",
+        true,
+        [
+          "Montagem eletromecânica",
+          "Obra industrial",
+          "Parada de manutenção",
+          "Descomissionamento",
+          "Ampliação industrial",
+          "Retrofit/adequação",
+          "Projeto EPC",
+          "Outro"
+        ]
+      ],
+      [
+        "Fase do projeto",
+        "radio",
+        true,
+        [
+          "Planejamento inicial",
+          "Mobilização",
+          "Execução",
+          "Em atraso",
+          "Em recuperação",
+          "Encerramento",
+          "Discussão de pleito/disputa",
+          "Não sei informar"
+        ]
+      ],
+      [
+        "Ferramenta utilizada no cronograma",
+        "radio",
+        false,
+        [
+          "Primavera P6",
+          "MS Project",
+          "Excel",
+          "Outra ferramenta",
+          "Não sei"
+        ]
+      ],
+      [
+        "O projeto possui baseline (linha de base) aprovado?",
+        "radio",
+        true,
+        [
+          "Sim",
+          "Não",
+          "Existe, mas está desatualizado",
+          "Não sei"
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Sinais Técnicos de Risco",
+    "desc": "Responda considerando a situação atual do cronograma, não o cenário desejado.",
+    "fields": [
+      [
+        "O projeto apresenta atraso ou tendência de atraso?",
+        "radio",
+        true,
+        [
+          "Não",
+          "Há preocupação, mas sem atraso confirmado",
+          "Sim, atraso leve",
+          "Sim, atraso relevante",
+          "Não sei"
+        ]
+      ],
+      [
+        "Existe risco de multa, pleito ou conflito contratual?",
+        "radio",
+        true,
+        [
+          "Não",
+          "Possivelmente",
+          "Sim",
+          "Já existe discussão em andamento",
+          "Não sei"
+        ]
+      ],
+      [
+        "O caminho crítico é revisado tecnicamente pela equipe?",
+        "radio",
+        true,
+        [
+          "Sim, com frequência",
+          "Às vezes",
+          "Não",
+          "O software calcula e a equipe apenas acompanha",
+          "Não sei"
+        ]
+      ],
+      [
+        "O cronograma utiliza restrições manuais para fixar datas?",
+        "radio",
+        true,
+        [
+          "Não",
+          "Algumas",
+          "Muitas",
+          "Não sei"
+        ]
+      ],
+      [
+        "Há uso de lags, ajustes manuais ou vínculos artificiais na rede?",
+        "radio",
+        true,
+        [
+          "Não",
+          "Sim, pontualmente",
+          "Sim, com frequência",
+          "Não sei"
+        ]
+      ],
+      [
+        "As interfaces entre disciplinas estão representadas no cronograma?",
+        "radio",
+        true,
+        [
+          "Sim",
+          "Parcialmente",
+          "Não",
+          "Não sei"
+        ]
+      ],
+      [
+        "O cronograma atual é comparado tecnicamente com o baseline?",
+        "radio",
+        true,
+        [
+          "Sim",
+          "Não",
+          "Apenas visualmente",
+          "Não sei"
+        ]
+      ],
+      [
+        "A diretoria utiliza o cronograma para tomada de decisão?",
+        "radio",
+        true,
+        [
+          "Sim",
+          "Parcialmente",
+          "Não",
+          "Usa mais relatórios paralelos",
+          "Não sei"
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Percepção Executiva",
+    "desc": "Como você percebe a confiabilidade do cronograma?",
+    "fields": [
+      [
+        "Maior preocupação em relação ao cronograma",
+        "checkbox",
+        false,
+        [
+          "Atraso",
+          "Multa",
+          "Pleito",
+          "Perda de margem",
+          "Falta de confiabilidade das datas",
+          "Pressão do cliente",
+          "Caminho crítico pouco claro",
+          "Falta de atualização confiável",
+          "Interface entre áreas",
+          "Não há preocupação no momento"
+        ]
+      ],
+      [
+        "Confiança nas datas do cronograma atual",
+        "radio",
+        true,
+        [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      ],
+      [
+        "Deseja receber a devolutiva preliminar? (simulação)",
+        "radio",
+        false,
+        [
+          "Sim",
+          "Não"
+        ]
+      ],
+      [
+        "Estou ciente de que esta é uma demonstração e nenhuma resposta será enviada ou armazenada.",
+        "consent",
+        true
+      ]
+    ]
+  }
+];
+
+const form = document.getElementById('assessment');
+const progressLabel = document.getElementById('percent');
+const progressBar = document.getElementById('bar');
+const finish = document.getElementById('finish');
+const submitButton = document.getElementById('submit');
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[char]));
+}
+
+// Constrói o formulário a partir das perguntas acima.
+sections.forEach((section, sectionIndex) => {
+  const block = document.createElement('section');
+  block.className = 'block';
+  block.innerHTML = `
+    <div class="block-head">
+      <div class="number">Bloco ${String(sectionIndex + 1).padStart(2, '0')}</div>
+      <h2>${escapeHTML(section.title)}</h2>
+      <p>${escapeHTML(section.desc)}</p>
+    </div>`;
+
+  const fields = document.createElement('div');
+  fields.className = 'fields';
+
+  section.fields.forEach(([label, type, required, options], fieldIndex) => {
+    const id = `f${sectionIndex}_${fieldIndex}`;
+    const container = document.createElement('div');
+    container.className = 'field ' + (['radio', 'checkbox', 'consent'].includes(type) ? 'wide' : '');
+    const requiredMark = required ? ' <span class="required">*</span>' : '';
+
+    if (['text', 'email', 'tel'].includes(type)) {
+      container.innerHTML = `
+        <label for="${id}">${escapeHTML(label)}${requiredMark}</label>
+        <input id="${id}" name="${id}" type="${type}"
+          ${required ? 'required' : ''}
+          autocomplete="${type === 'email' ? 'email' : 'off'}">`;
+    } else if (type === 'consent') {
+      container.innerHTML = `
+        <label class="choice consent">
+          <input type="checkbox" id="${id}" name="${id}" required>
+          <span>${escapeHTML(label)}${requiredMark}</span>
+        </label>`;
+    } else {
+      const choices = options.map((option, optionIndex) => `
+        <label class="choice">
+          <input type="${type}" name="${id}" value="${escapeHTML(option)}"
+            ${required && optionIndex === 0 ? 'required' : ''}>
+          <span>${escapeHTML(option)}</span>
+        </label>`).join('');
+
+      container.innerHTML = `
+        <div class="question" id="label_${id}">${escapeHTML(label)}${requiredMark}</div>
+        ${type === 'checkbox' ? '<p style="font-size:12px;color:#687b81;margin-top:-5px">Selecione quantas opções forem aplicáveis.</p>' : ''}
+        <div class="choices" role="group" aria-labelledby="label_${id}">
+          ${choices}
+        </div>`;
+    }
+    fields.appendChild(container);
+  });
+
+  block.appendChild(fields);
+  form.appendChild(block);
+});
+
+// Progresso baseado nos campos obrigatórios, sem coletar dados.
+const requiredNames = [...new Set(
+  [...form.querySelectorAll('input[required]')].map(input => input.name)
+)];
+
+function updateProgress() {
+  const completed = requiredNames.filter(name => {
+    const group = [...form.elements].filter(element => element.name === name);
+    return group.some(element =>
+      element.type === 'radio' || element.type === 'checkbox'
+        ? element.checked
+        : element.value.trim()
+    );
+  }).length;
+
+  const percent = Math.round(completed / requiredNames.length * 100);
+  progressLabel.textContent = `${percent}%`;
+  progressBar.style.width = `${percent}%`;
+}
+
+form.addEventListener('input', updateProgress);
+form.addEventListener('change', updateProgress);
+
+// Apenas demonstração: não existe fetch, API ou transmissão das respostas.
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  if (!form.reportValidity()) return;
+
+  finish.hidden = false;
+  finish.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  submitButton.hidden = true;
+  form.querySelectorAll('input').forEach(input => { input.disabled = true; });
+});
+
+updateProgress();
+  </script>
+ </body>
+</html>
+
