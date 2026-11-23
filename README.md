@@ -1,8 +1,8 @@
 # Alyra Consultoria
 
-Este repositório apresenta uma versão demonstrativa do site que desenvolvi para a Alyra Consultoria, empresa que atua com planejamento e análise de cronogramas industriais.
+Este repositório apresenta uma versão demonstrativa do site desenvolvido para a Alyra Consultoria, empresa que atua com planejamento e análise de cronogramas industriais.
 
-O projeto reúne um site institucional, criado para apresentar os serviços da empresa e facilitar o contato com possíveis clientes, e uma página de pré-diagnóstico. Nela, o visitante responde a um questionário sobre o cronograma de seu projeto, com perguntas divididas por assunto e uma barra que acompanha o preenchimento.
+O projeto reúne um site institucional, criado para apresentar os serviços da empresa e facilitar o contato com clientes, e uma página de pré-diagnóstico. Nela, o visitante responde a um questionário sobre seu projeto, com perguntas divididas por assunto e uma barra que acompanha o preenchimento.
 
 ## Tecnologias utilizadas
 
@@ -17,3 +17,9 @@ Para compartilhar o projeto no GitHub, preparei uma versão sem as integrações
 ## Como visualizar
 
 Baixe o repositório e abra o arquivo `index.html` no navegador. O [pré-diagnóstico](prediagnostico/index.html) também pode ser acessado pela página principal.
+
+## Site original
+
+O projeto também pode ser acessado em sua versão original abaixo, com as funcionalidades e integrações utilizadas pela empresa.
+
+**[Alyra Consultoria](https://alyraconsultoria.vercel.app/)**
