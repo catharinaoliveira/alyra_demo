@@ -1,41 +1,19 @@
-# Alyra Consultoria | Demonstração
+# Alyra Consultoria
 
-Versão demonstrativa de um projeto de desenvolvimento web realizado para a Alyra Consultoria.
+Este repositório apresenta uma versão demonstrativa do site que desenvolvi para a Alyra Consultoria, empresa que atua com planejamento e análise de cronogramas industriais.
 
-O projeto reúne um site institucional e uma página de pré-avaliação de riscos do cronograma, com foco na apresentação dos serviços e em uma experiência de preenchimento simples e responsiva.
+O projeto reúne um site institucional, criado para apresentar os serviços da empresa e facilitar o contato com possíveis clientes, e uma página de pré-diagnóstico. Nela, o visitante responde a um questionário sobre o cronograma de seu projeto, com perguntas divididas por assunto e uma barra que acompanha o preenchimento.
 
-## Funcionalidades
+## Tecnologias utilizadas
 
-- Site institucional com informações sobre a consultoria e seus serviços.
-- Formulário de contato demonstrativo.
-- Pré-avaliação de riscos do cronograma dividida em quatro seções.
-- Barra de progresso durante o preenchimento do questionário.
-- Navegação entre o site institucional e o pré-diagnóstico.
-- Layout responsivo para diferentes tamanhos de tela.
-
-## Tecnologias
-
-- HTML
-- CSS
+- HTML e CSS
 - JavaScript
-
-## Estrutura
-
-```text
-alyra_demo/
-├── index.html
-├── main.webp
-├── favicon.svg
-└── prediagnostico/
-    ├── index.html
-    ├── predig.webp
-    └── favicon.svg
-```
-
-## Como executar
-
-Clone ou baixe este repositório e abra o arquivo `index.html` no navegador. A página de pré-diagnóstico também pode ser acessada pelo site institucional.
+- Python (Flask), utilizado no backend do projeto original
 
 ## Sobre esta versão
 
-Este repositório é destinado à apresentação do projeto em portfólio. Os formulários são apenas demonstrativos: **nenhuma resposta é enviada ou armazenada**. As integrações de backend utilizadas no projeto original não fazem parte desta versão pública.
+Para compartilhar o projeto no GitHub, preparei uma versão sem as integrações do backend original. O visual, a navegação e o preenchimento dos formulários foram mantidos, mas **nenhuma informação é enviada ou armazenada**.
+
+## Como visualizar
+
+Baixe o repositório e abra o arquivo `index.html` no navegador. O [pré-diagnóstico](prediagnostico/index.html) também pode ser acessado pela página principal.
