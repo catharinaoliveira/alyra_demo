@@ -17,9 +17,3 @@ Para compartilhar o projeto no GitHub, preparei uma versão sem as integrações
 ## Como visualizar
 
 Baixe o repositório e abra o arquivo `index.html` no navegador. O [pré-diagnóstico](prediagnostico/index.html) também pode ser acessado pela página principal.
-
-## Site original
-
-O projeto também pode ser acessado em sua versão original abaixo, com as funcionalidades e integrações utilizadas pela empresa.
-
-**[Alyra Consultoria](https://alyraconsultoria.vercel.app/)**
